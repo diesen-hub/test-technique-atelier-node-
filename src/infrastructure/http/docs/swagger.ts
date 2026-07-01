@@ -151,5 +151,5 @@ const generator = new OpenApiGeneratorV3(registry.definitions);
 export const openApiDocument = generator.generateDocument({
   openapi: "3.0.0",
   info: { title: "Atelier Node API", version: "1.0.0" },
-  servers: [{ url: "http://localhost:3000" }],
+  servers: [{ url: process.env.API_URL ?? 'http://localhost:3000' }],
 });
