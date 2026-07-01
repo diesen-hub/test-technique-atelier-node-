@@ -12,6 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/docs", (_req, res) => res.redirect("/docs/"));
 app.use(
   "/docs",
   swaggerUi.serve,
