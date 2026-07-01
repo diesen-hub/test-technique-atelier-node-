@@ -3,11 +3,13 @@ import { errorHandler } from "@infrastructure/http/middlewares/errorHandler";
 import healthRouter from "@infrastructure/http/routes/healthRouter";
 import playerRouter from "@infrastructure/http/routes/playerRouter";
 import statsRouter from "@infrastructure/http/routes/statsRouter";
+import cors from "cors";
 import express from "express";
 import swaggerUi from "swagger-ui-express";
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.use(
